@@ -2,12 +2,8 @@
 # What Factors Determine Income? (Adult Census Dataset)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![FASTAI](https://img.shields.io/badge/Notebook-Jupyter-orange)
-![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-yellow)
-![XGBoost](https://img.shields.io/badge/Model-XGBoost-red)
-![LightGBM](https://img.shields.io/badge/Model-LightGBM-success)
-![CatBoost](https://img.shields.io/badge/Model-CatBoost-orange)
-![Optuna](https://img.shields.io/badge/Tuning-Optuna-blueviolet)
+![Jupyter](https://img.shields.io/badge/Notebook-Jupyter-orange)
+
 
 School project realized by Bonifas Olivier, Filloux Louis, and Gendronneau Maël.
 
