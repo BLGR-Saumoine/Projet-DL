@@ -1,46 +1,72 @@
+# Implementing Residual Networks from Scratch
 
-# What Factors Determine Income? (Adult Census Dataset)
-
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red) 
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue) 
 ![Jupyter](https://img.shields.io/badge/Notebook-Jupyter-orange)
 
+Academic project by Gendronneau Maël.
 
-School project realized by Bonifas Olivier, Filloux Louis, and Gendronneau Maël.
+## Project Overview
 
-## Project Description
+This project aims to re-implement the famous Residual Network architecture (He et al., 2015) from scratch using PyTorch. The primary objective is to demonstrate the effectiveness of ResNet's residual connections compared to conventional convolutional architectures, while exploring various architectural components through systematic experimentation.
 
-## Repository Content
+## Repository Structure
 
-* **Adult_Income.ipynb**: The main notebook containing the entire code (EDA, Feature Engineering, Modeling, Stacking).
-* **adult.csv**: The raw dataset used for the analysis.
-* **profile.html**: Detailed exploratory analysis report (generated via YData Profiling).
-* **requirements.txt**: List of necessary dependencies.
-* **source/**: Directory containing the LaTeX source code for the project report (main.tex, chapters, bibliography, etc.).
+* **ResNet_Implementation.ipynb**: Main notebook containing the complete implementation, experiments, and analysis.
+* **requirements.txt**: List of required dependencies (PyTorch, fastai, torchvision, etc.).
+* **experiment_results/**: Directory containing saved model's performances and visualization outputs.
+* **report/**: Project report documenting methodology, experiments, and conclusions.
 
-## Technologies and Methodology
+## Key Components Implemented
 
-The project follows a complete Data Science pipeline using advanced libraries:
+### Core Architecture
+- **Plain Convolutional Network**: Baseline model without residual connections
+- **Residual Network**: Implementation with residual skip connections
+- **Bottleneck Layers** (Optional): For deeper network configurations
 
-1. Exploratory Data Analysis (EDA)
-Usage of Pandas and YData Profiling (profile.html) as well as interactive visualizations with Plotly.
+### Architectural Elements
+- **Residual Connections**: Identity and projection mappings
+- **Batch Normalization**: With experimental comparison to models without BN
+- **Modular Design**: Configurable number of layers, blocks, and normalization options
 
-2. Modeling (Machine Learning)
-We tested and compared several algorithms, including advanced boosting methods:
-* Base Models: Logistic Regression, Naive Bayes.
-* Ensemble Methods: Random Forest, XGBoost, LightGBM, CatBoost.
-* Advanced Technique: Stacking (Meta-model).
+## Methodology
 
-3. Optimization
-Usage of Optuna to search for the best hyperparameters.
+### Dataset
+- **Imagenette**
+- **Data Loading & Augmentation**: Using fastai for efficient pipeline
+- **Preprocessing**: Standard ImageNet normalization and augmentation techniques
 
-## Conclusion & Key Takeaways
+### Experiments Conducted
+1. **Baseline Comparison**: Plain CNN vs. ResNet with same depth
+2. **Ablation Studies**:
+   - With vs. Without Batch Normalization
+   - With vs. Without Residual Connections
+   - Different network depths (18, 34, 50 layers)
+3. **Optional Techniques** (Bag of Tricks):
+   - Fully Convolutional vs. Fully Connected classification heads
+   - Label Smoothing
+   - Mixup Data Augmentation
+   - Bottleneck Layers for deeper networks
 
-We determined that the **Matthews Correlation Coefficient (MCC)** was the most reliable metric for our evaluation. Unlike Accuracy or F1-Score, MCC provided a more robust measure of the models' quality, particularly given the imbalanced nature of the dataset.
+### Implementation Details
+- Pure PyTorch implementation (no high-level wrappers for core architecture)
+- Custom training loops with proper validation splits
+- Comprehensive logging and visualization of training dynamics
+- Systematic hyperparameter tuning and comparison
+
+## Results & Insights
+
+The notebook presents clear experimental evidence showing:
+- The impact of residual connections on gradient flow and training stability
+- Batch Normalization's effect on convergence speed and generalization
+- How network depth affects performance with and without residual connections
+- Comparative analysis of different architectural choices
+
+## Key References
+- He et al. (2015) - Deep Residual Learning for Image Recognition
+- Bag of Tricks for Image Classification (optional extensions)
 
 ## Authors
+- Gendronneau Maël
 
-* Bonifas Olivier
-* Filloux Louis
-* Gendronneau Maël
-
-This project was realized within an academic framework.
+*This project was completed as part of an academic curriculum in deep learning and computer vision.*
